@@ -1,0 +1,5 @@
+일지 211101
+
+the public type must be defined in its own file // pom.xml에 있는 test scope줄을 지워준다
+
+this method has a constructor name // 클래스명이랑 메소드명이랑 같음
