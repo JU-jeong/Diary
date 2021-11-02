@@ -1,0 +1,264 @@
+//반복문 for을 사용하여 객체 배열을 생성하고 출력해보시오
+//객체의 주소를 저장하고 있는 객체 배열을 반복문을 사용하여 만들 수 있는지를 묻는 문제이다.
+
+
+class Person{
+
+	private String name;
+	private int age;
+
+
+	Person(){}
+	Person(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+
+public String getName(){return name;}
+public void setName(String name){this.name=name;}
+
+public int getAge(){return age;}
+public void setAge(int age){this.age=age;}
+
+public class Java100_oop_ObjArray2{
+	public static void main(String[] args) {
+
+
+//[1]:객체 생성
+Person[] pa; //Person 타입의 객체 배열 변수 pa선언.
+pa = new Person[5]; //Person 객체의 참조값을 원소로 가지는 배열 공간을 5개 생성
+
+배열 배열 배열 배열 배열 5명 객체 생성할테니 주소 저장해라
+
+Person[] pa; 
+pa = new Person[5];
+
+
+
+//[2]반복문 for을 돌면서 Person()객체 생성
+for(int i=0; i<pa.length; i++){
+	pa[i] = new Person(i+"번 후보자", i+,20); //pa의 0번째 방에 생성된 주소값을 쳐넣는다
+	}//주소값을 넣는다 주소값을 넣는다 주소값을 넣는다 주소값을 넣는다
+}
+
+//i가 됨으로써 홍길동을 5번쳐넣는다
+//i번이 올라감으로써 후보자가 올라간다 i가 올라감으로써 후보자의 번호가 올라간다
+//i번후보자는 문자열 i만 있으면 정수로 전달
+//private설정->getter setter로 접근
+
+
+//[2-1]getter setter메서드 사용해서 출력
+System.out.println(pa[i].getName()); //가져온다 가져온다 가져온다 가져온다
+
+//확보한 필드에서 이름 나이를 주솟값에 쳐넣는다
+
+
+
+//[2-2]배열 인덱스 사용해서 출력(물론 private선언을 삭제해야함)
+System.out.println(pa[i].name)//getName조차도 필요없음
+
+
+//[2-3]print()
+System.out.printf("%s번후보자의 나이는 %d살입니다.",pa[i].getName,pa[i].getAge);
+
+
+
+메서드, 정의, 메서드 구현
+
+public class Java100_method_ExamStatic1 {
+	public static void helloWorld(){
+		System.out.println("HelloWorld"){
+} 
+
+	
+
+	public static void main(String[] args) {
+	
+	//[1]:메서드 호출
+	helloWorld();
+	}
+}
+
+
+//static메소드는 static메소드를 호출할 수 있다 static끼리 호출가능
+
+//static에 대한 개념
+
+
+메서드란 무엇인가
+메서드는 다른 언어에서의 함수와 마차가지로 어떤 특정한 동작이나 처리를 하도록 만들어진 코드 단위이다
+반복적인 작업을 처리해야 하는 경우 메서드로 만들어 놓으면 이후에 필요할 떄 다시 재사용 할 수 있어서 아주 유용하다
+메서드는 호출시 어떤 겨로가를 반환하기도 하지만 결과를 반환하지 않는 메서드도 있다
+메서드는 호출시어떤인자값들을 넘겨서 호출하는 경우도 있지만 인자값없이 호출하는 경우도 있다
+
+
+반환값이 없고 받는 인자값도 없는 메소드
+반환갑과 인자반환인자
+
+반환 인자
+반환 인자
+반환 인자
+반환 인자
+
+public class sibal {
+
+	public static void showMenu() {
+		System.outprintln("showMenu() 메서드가 호출되었습니다.");
+//반환 인자 둘다 없음 그냥 호출만함
+
+
+
+
+
+	public static void main(String[] args) {
+	//반환값과 인자값
+	//showMenu();
+	}
+}
+
+
+반환 인자 반환 인자 반환 인자 
+인자 반환 인자 반환 인자 반환
+
+public class sibal {
+	public static void main(String[] args) {
+
+	//[1]:반환값없음 인자값은 잇음
+
+//인자값이 있다는 것은 무엇을 의미하는가? return값은 없지만 method가
+//호출할때 파라미터값을 넘긴다는 뜻(파라미터=매개변수)
+
+int a = 100, b=200;
+plusMethod(a,b);
+호출부에서 ab값을 넘겨야 한다
+
+	public static void plusMethod(int a, int b) {
+		//단순 출력
+		System.out.printf("인자로넘겨받은값은%d와 %d입니다.%n",a,b);
+	}
+		//연산 출력
+		int rst = a + b;
+		System.out.println("두 수를 더한 값은 =" + rst);
+}
+
+
+
+
+public static void main(String[] args){
+	int a = 100, b = 200; //호출부에서 파라미터 값을 넘겨
+	plusMethod(a, b);
+
+}
+
+반환값이 있고 받는 인자값이 없는
+반환값이 있고 받는 인자값이 없는
+
+public class sibal{
+	int ret = 100;
+	ret *= 100;
+	return ret; //메소드의 실행(10000이라는 값)
+	여기서 뭔가 뿌린다 응기잇
+	
+	public static void main(String[] args) {
+
+	//[1] 반환값이 있고 인자값이 없는
+	//반환값이 있다는 것은 메서드 함수 호출에 따른 리턴값이 있다
+	//받을 준비를 해야 리턴값을 받을 변수를 정의해야 한다.
+	int rst;
+	rst = returnMethod(); //위에 returnMethod 를 통해 얻어진 값을 받는 rst
+	//rst 10000의 값을 받는다 
+	
+---------------------------------------------------------------
+
+반환값이 있고 인자값도 있다
+
+upperClass
+lowerClass
+
+수박을 담을건데 작은 귤을 담을 상자를 가져오면 안된다(타입이 맞아야 한다)
+
+public class sibal {
+
+	public static String capitalMethod(String str) {
+		String ret = str.toUpperCase();
+		return ret;
+	}
+
+
+	public static void main(String[] args) {
+	String rst;
+	rst = capitalMethod("korea");
+
+	System.out.println("입력한 소문자의 대문자는 =" + rst);
+
+	}
+}
+
+지금 뭐 한게 없어요 왜 소문자를 넣으면 그냥 소문자를 받아서 출력합니까 이건
+
+대문자로 어떻게 바꿀것인가
+
+str.toUpperCase();
+
+
+-----------------------------------------------------------------------------------------------
+
+public class main{
+	public void helloWorld() {
+		System.out.println("Hello, World~ ^_^);
+	}
+
+	public static void main(String[] args){
+		helloWorld();
+	}
+
+}
+
+어떻게 static을 사용하지 않고 출력부에서 메소드를 사용할 것인가?
+static이 없으면 인스턴스는 객체 생성해서 접근해라
+static이 있으면 인스턴스는 객체 생성할 필요없음
+
+위에 static이 없으니까 객체를 생성후 메서드를 호출한다
+
+main main = new main();
+main.helloWorld(); //싸프가능
+
+
+-------------------------------------------------------------------------------------------------
+
+public static void sum(int a) {
+	a+=400;
+	System.out.println(a);
+}
+
+public static void main(String[] args) {
+	int a = 100;
+	sum(a);
+	System.out.println(a);
+}
+ 
+500
+100
+
+
+public class main{
+
+	public static void sum(int a) {
+		a+=400;
+		System.out.println(a);
+	}
+
+
+
+
+	public static void main(String[] args){
+
+	int a = 100;
+	sum(a);
+	
+	System.out.println(a);
+	}
+}
+
+
+
