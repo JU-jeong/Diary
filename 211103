@@ -1,0 +1,208 @@
+2개의정수형값을리턴하는메서드를구현하시오
+이문제는두개의리턴값을반환하는메서드작성법을아는지에대해서묻는문제이다
+아래의코드에서2개의리턴값을받는코드는1과2중 어느것인가
+
+자바는 기본적으로 1개의 리턴값만 가진다
+public class Main{
+	public static void(타입값 = int[]) testMethod(){
+		int num1 = 100;
+		int num2 = 200;
+		return new int[] {num1, num2} //여기가바뀐다
+		
+	}
+
+	public static void main(String[] args){
+	
+		여기도 바뀐다 -> int result[] = testMethod();
+		
+		System.out.printlnt(result); // num
+
+	}
+}
+
+배열로하게되면이값이 뭐에요
+배열로 하면 100이라는 값과 200이라는 값을 하나에 바구니에 담아놓는거에요
+return new int[] {num1, num2}
+return new int[] {num1, num2}
+return new int[] {num1, num2}
+
+new int[] {num1, num2}
+new int[] {num1, num2}
+new int[] {num1, num2}
+new int[] {num1, num2}
+new int[] {num1, num2}
+new int[] {num1, num2}
+
+배열변수선언메서드로부터반환값을받이배열이기때문에
+배열변수선언메서드로부터반환받을값이배열이기때문에
+배열변수선언메서드로부터반환받을값이배열이기때문에
+배열변수선언메서드로부터반환받을값이배열이기때문에
+
+주소값보는법
+[I@6d06d69c
+
+[ 배열이구나!
+
+
+public static int[] testMethod() {
+	int num1 = 100;
+	int num2 = 100;
+	return new int[] {num 1, num2};
+}
+
+반환받을 값
+int result[] = testMethod();
+
+System.out.println(result[0] + "-" + restult[1]); 각각 출력
+System.out.println(result[0] + reult[1]); 300
+System.out.println(result); 주소값출력 배열의 주소
+Arrays.toString(result); //한방에 배열의 모든 요소를 출력
+
+
+Arrays.toString(result); 한방에 배열의 모든 요소를 출력
+Arrays.toString(result); 한방에 배열의 모든 요소를 출력
+Arrays.toString(result); 한방에 배열의 모든 요소를 출력
+Arrays.toString(result); 한방에 배열의 모든 요소를 출력
+Arrays.toString(result)
+Arrays.toString(result)
+
+반환값이2개있는메서드를구현해보시오
+메서드는 korea USA 입력시 소문자는 대문자로 대문자는 소문자로 출력되도록
+리턴되는반환값이2개일때처리하는방법을아는지
+
+
+public class Main{
+
+public static String[] contry(){
+	return new String[] = {korea, USA};
+}
+
+public static void main(String[] args){
+
+String[] result = String contry[];
+contry[0].toUpperclass
+contry[1].toLowerclass
+
+System.out.println(contry[0] + " - " + country[1]);
+}
+
+}
+
+오른쪽에 타입 붙을필요없음
+""문자열타입은 항상주의
+
+String[] result = contry("korea","USA");
+String[] result = contry("korea","USA");
+
+올바른 사용법
+String a = a.toUpperCase();
+String b = b.toLowerCase();
+String a = a.toUpperCase();
+String b = b.toLowerCase();
+String a = a.toUpeerCase();
+String b = b.toLowerCase();
+
+
+public static String[] country(String a, String b){
+	String a = a.toUpperCae();
+	String b = b..toLowercase();
+	
+	String[] ret = {a, b};
+	return ret;
+}
+
+public stattic void main(String[] args){
+	String[] result = contry("korea","USA");
+	System.out.println(result[0]);
+	System.out.println(result[1]
+}
+
+
+------------------------------------------------
+
+클래스, 속성, 동작
+
+FarmMachine의 속성과 동작들을 가지는 클래스를 코드로 구현하고 객체를 생성하여 동작시켜보시오
+이문제는어떤사물에대한클래스를실제코드로구현할수있는지를묻는문제이다
+아래와같이결과가나오도록작성하시오
+
+10000
+2020
+red
+Farm-machine is moving
+digging
+grinding
+
+처음엔쉽지않아요처음에너무욕심내지마시고
+
+public class main1{
+	public static void main(String[] args){
+
+	FarmMachine fm = new FarmMachine();
+	System.out.println(fm); //주소값
+	
+	fm.price = 1000000; //속성값
+	fm.year = 2020; //속성값
+	fm.color = 'red' //속성값
+	
+	
+	System.out.println(fm.price); //속성값출력하기
+	System.out.println(fm.year);	//속성값출력하기
+	System.out.println(fm.color);	//속성값출력하기
+
+	}
+	
+}
+
+
+문자열을 숫자로 바꿔서 연산해보시오
+이때인자값으로 진수를 지정해서 출력해보시오
+이문제는 자바프로그래밍시문자열을 숫자로변환시키는 것에 대해서 아는지를 묻는 문제이다
+
+
+public class Java100_oop_ParseInt{
+	public static void main(String[] args) {
+	int a = 1;
+	int b = 2;
+	int c = a+b;
+	System.out.println("a+b="+c); //연산후의 결과
+
+	String a1= "1";
+	String b1= "2";
+	String c1= a1+b1;
+	System.out.println("a1+b1="+c1); // 붙는다 답은 12이다
+	System.out.println(c1.getClass().getName());
+	int a2 = Integer.parseInt();
+	
+	}
+}
+int a2=Integer.parseInt(a1); //a2에는 a1값이 정수로 변환되어 저장된다
+int a2=Integer.parseInt(a1); //a2에는 a1값이 정수로 변환되어 저장된다
+int a2=Integer.parseInt(a1); //a2에는 a1값이 정수로 변환되어 저장된다
+int a2=Integer.parseInt(a1); //a2에는 a1값이 정수로 변환되어 저장된다
+
+parseInt() Integer클래스의 static으로 지정 -> 따라서 객체의 생성없이 바로 클래스명.parseInt()
+로 직접 사용이 가능
+두번째 인자값으로 진수를 지정 해당진수에 맞는 값이 됨 Integer.parseInt();
+Integer.parseInt("1000, 2) (1000이라는 값을 2진수로)
+
+public class Java ParseInt2 {
+	public static void main(String[] args){
+
+	int a = 1;
+	int b = 2;
+	int c = a+b;
+	System.out.println("a+b =" + c);
+
+	String a1 = "1";
+	String b1 = "2";
+	String c1 = a1 + b1;
+	System.out.println("a1+b1=" +c1);
+	System.out.println(c1.getClass().getName());
+
+	System.out.println(Integer.parseInt("2022")); //2022라는 값을 정수로바꿔
+	Integer.parseInt("2022",10); 2022를 10진수로바꿔
+	Integer.parseInt("1",10); 1을 10진수로 바꿔
+	
+	
+
