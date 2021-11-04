@@ -1,0 +1,243 @@
+class A {
+
+}
+public class B {
+	public static void main(String[] args){
+
+}
+class Java100_oop_Exam004{
+
+}
+
+하나의 파일에 2개 이상의 클래스를 작성할 수 있다
+
+3개의 클래스가 있다면 자바 파일명이 될 수 있는 것은 public 키워드가 붙은 클래스이다
+
+한 파일내 3개 이상의 클래스에 모두 public 키워드를 안붙일 수 있다
+
+한 파일내 3개 이상의 클래스에 모두 public 키워드가 없다면 클래스 중 어느 것이라도 파일명이 될 수 있다
+
+자바 파일에 클래스가 한 개 있다면 클래스명이 곧 파일명이 되어야 한다
+
+
+[1]생성자Constructor
+생성자는 new키워드로 클래스의 객체또는 인스턴스가 생성될때
+제일 먼저 자동적으로 호출되는 메서드이다.
+따라서, 객체의 초깃값을 설정하는 등의 용도로 많이 사용된다. 
+생성자명은 클래스명과 동일하게 만든다.
+생성자는 리턴되는 반환값이 없다. 객체가 생성될 때 제일 먼저 호출만 된다.
+생성자는 오버로딩이 가능하다.
+생성자는 default 생성자라는 것이 있다. 클래스내에 생성자가 없다면 default 생성자가 자동 호출
+클래스명과 동일하고 받는 인자값도 없다. 
+
+
+class Person {
+
+[1]속성 attribute
+int age;
+String name;
+
+[2]생성자 constructor
+Person(){}
+
+[2]메서드 method
+void move() {
+	System.out.println("Person is moving");
+}
+}
+생성자 오버로딩
+생성자 오버로딩
+생성자 오버로딩
+생성자 오버로딩
+생성자 오버로딩
+
+
+class Person{
+	[1]속성attribute
+	int age;
+	String name;
+
+	[2]생성자constructor
+	Person() {}
+	monster(){}
+	Person() {}
+
+	[3]메서드method
+}
+
+public class Java100_oop_Exam006{
+	public static void main(String[] args){
+		[1]객체
+	}
+}
+
+Person(){} 오 버 로딩
+
+Person(int age, String name)
+
+
+
+
+
+public class Java100_oop_Exam006 {
+
+	public static void Person(){}
+1int age;
+int andjfasd;
+2
+person(){}
+asdfasf(){}
+adfhaslkjdfhla(){]
+3fdaasdf
+
+	public static void main(String[] args) {
+
+	Person1 p1 = new Person(20, "홍길동");
+	System.out.println(p1);
+	
+	}
+}
+
+
+attribute
+int age;
+String name;
+
+Constructor;
+Person(){}받을수도 있고    // 받는인자값이 없는 생성자'메서드'
+Person(나이 이름 등등등){} // 받는 인자값이 있는 생성자'메서드'
+
+공장에 내가 20 홍길동으로 주문을 넣는다면의 주문서하고
+또 어떤사람은 new해갖고 주문서에 아무것도 안썼어요 이것도 이제 주문서가 되는거죠 주문서에 넣었어
+이것을 오버로딩
+
+Person(){}
+Person(int age, String name){}
+this.age = 20이 넘어와요;
+this.name = 홍길동도 그대로 넘어와요;
+super(메서드);
+publicstaticvoidmain
+new Person(20, "홍길동");
+
+
+상송 Inheritance이란?
+super(메서드); 부모클래스의 생성자를 호출해달라
+super(메서드); 부모클래스의 생성자를 호출해달라
+super(메서드); 부모클래스의 생성자를 호출해달라
+
+-------------------------------------------------------
+public class asdfjasd
+public static void person(상위계층 어나더레벨)
+person(상위계층 어나더레벨)
+person(상위계층 어나더레벨)
+person(상위계층 어나더레벨)
+person(상위계층 어나더레벨)
+person(상위계층 어나더레벨)
+person(상위계층 어나더레벨)
+person(상위계층 어나더레벨)
+person(상위계층 어나더레벨)
+person(상위계층 어나더레벨)
+person(상위계층 어나더레벨)
+person(상위계층 어나더레벨)
+person(상위계층 어나더레벨)
+person(상위계층 어나더레벨)
+person(상위계층 어나더레벨)
+person(상위계층 어나더레벨)
+String 이름;
+int 나이;
+키
+체중
+넘버
+무기
+파워
+
+
+악당(이름나이키체중넘버무기파워)
+
+
+
+스태이터스
+print-----------
+악당 이름
+나이
+키
+체중
+넘버
+무기
+파워
+------------------
+악당 이동중
+
+public static void main(stringargs)
+
+악당 좀비 = new 악당
+키나이체중넘버무기파워
+
+악당 도꺠비 = new 악당
+키나이체중넘버무기파워
+
+악당 몽달귀신 = new 몽달귀신
+키나이체중넘버무기파워
+
+ 
+print(좀비.스태이터스);
+print(도깨비.스태이터스);
+print(몽달귀신.스태이터스);
+--------------------------------------------------------------
+
+private getter setter
+private getter setter
+private getter setter
+private getter setter
+private getter setter
+private getter setter
+private getter setter
+프라이빗 게타 세타
+프라이빗 게타 세타
+프라이빗 게타 세타
+프라이빗 게타 세타
+private로 격리된 환자에게 편지(인자)를 전달(setting)
+getter private(환자)에게 값을 전달
+
+getter 문병인
+
+setter 간호사
+
+private 환자
+
+
+private 이름
+
+
+------------------
+출력부
+
+Person p1 = new Person();
+값세팅하면 오류(private)
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
