@@ -1,0 +1,58 @@
+class = "chk" title = "제목을 입력하세요."ㄱ
+
+그럼 기본값은어떻게되요 이렇게 널이 되는거잖아요
+이곳에 뭐가있어요 이제 이렇게만든곳에 어떤주소가있을거아니에요
+이걸 참조해서 참조해서 참조변수라고한다 참조값(주소)를 가지고 있다
+
+참조형타입이라고한다
+
+ㄴㅅ갸ㅜ헤[ [게퍄ㅜㅇㅊㄷ = ㅜㄷㅈ ㄴㅅ갸ㅜㅎ[3[
+그럼 얼마든지 주소를 알고있으니까 이 주소를 이거를 가르키는거죠
+언제든지 배열 안에 든 값을 가져올수있다 이기야
+초기값은 null
+String[] a = new String[3]
+System.out.println(province[0]); // null이 출력된다
+System.out.println(province[1]); // null이 출력된다
+System.out.println(province[2]); // null이 출력된다
+System.out.println(province[3]); // null이 출력된다
+province[0] = "강원도";
+province[1] = "전라도";
+province[2] = "경상도";
+System.out.println(province[1]);
+String[] nation = new String[]{"한국","중국","미국");
+String[] flower = {"무궁화", "해바라기", "개나리"};
+[4]반복문을 사용하여 배열 값 모두 출력을 해보도록 하죠
+for(int i = 0; i<flower.length; i++){
+	System.out.print(flower[i]+" ");
+}
+향상된 for문으로 배열 요소 출력
+for(String aaa:province);
+for(String aaa:flower)
+	System.outprint(aaa);
+
+-----------------------------------------
+
+String의 2차원 배열 만들기 2x3 stage
+아시아는 동북아시아와 동남아시아로 나뉜다
+동북아시아 한국 중국 일본
+동남아시아 태국 베트남 필리핀
+
+String[][] asia nations = {
+	{"한국", "중국", "일본"},
+	{"태국","베트남","필리핀"}
+};
+
+System.out.println(asia_nations[0]); /동북아시아만 출력해라
+asianations의 배열 안의 1칸(배열)을 꺼내와라
+동북아시아만 출려개할 ->출력안됨 주소값만나옴
+System.otu.println(asia_nations[0][1]); // 죽구 실제 요소의 값 출력; = 중국
+System.out.println(asia_nations[1][0]);
+System.out.println(asia_nations.length); // 2
+asia_nations.length 새끼 배열을 몇개가지고 있나 2
+asia_nations.lentgth 새끼 배열을 몇개가지고 있나2
+asia_nations.length 새끼 배열을 몇개가지고 있나2
+asia_nations.length 새끼 배열을 몇개가지고 있나2
+asia_nations[0].length 0번행에 몇개 새끼를 가지고 있나 3
+asia_nations[0].length 0번행에 몇개 새끼를 가지고 있나 3
+asia_nations[0].length 0번행에 몇개 새끼를 가지고 있나3
+asia_nations[0].length 0번행에 몇개 새끼를 가지고 있나3
