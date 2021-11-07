@@ -1,0 +1,106 @@
+그럼이제클래스가 뭐에요
+클래스와 인터페이스로부터 상속과 구현을 한 메서드를
+상속과 구현을 한 메서드를 호출하다 그럼
+어디로부터 상속을 받은거에요 Person
+구현은 어디로부터 구현을 한거에요 
+ALLowance Train으로 부터 받았죠
+그럼 객체 이름이 뭐에요 이건 s1이죠?
+부모클래스에 있는걸 상속받아야했기때문에
+s1.wash();상속에서
+s1.study();받음
+s1.play(); 그냥 상속을 해주는것만으로 충분함
+이런건뭐에요 상속클래스로부터 상속받은 자식클래스는
+자식클래스는 다사용할수잇ㅆ은이까
+interface의 추상메서드는
+자체메서드에서 다 구현을 해놨기 때문에 재정의해서
+구현화해놓았기때문에 다 사용을 할수있는거에요
+s1.in(10000, "엄마");인터페이스에서
+s1.out(5000, "편의점");받음
+s1.train(50000, "아빠"); 재정의해라
+각각 받은게 다름
+class Students extends Person implements Allowance, Train
+interface Allowance {
+//Field
+변수는 안되나 상수는 되므로 상수로 지정해주면 됨
+public static final을 붙여주면 됨
+public static final String aaa = "코리아";
+public static final int bbb = 100;
+//인터페이스 내 모든 멤버 필드(변수)는 public static final
+이여야 함.
+인터페이스 내 모든 멤버 필드(변수)는 public static final이여야함-> 생략이 가능
+(public static final) String aaa = "코리아";
+(public static final) String aaa = "코리아";
+(public static final) String aaa = "코리아";
+(public static final) int bbb = 100;
+Abstract Method
+abstract void in(int price, String name);
+abstract void out(int price, String name);
+System.out.println(aaa); // 코리아
+System.out.println(bbb); // 공부하다
+System.out.println(Allowance.aaa);
+System.out.println(Allownace.bbb);
+
+==================================
+
+다형성 polymorphism 에 대해서 개념 설명을 해보시오.
+상속을 받아서 이렇게 되어있네요 다양한 방법들로
+객체 생성 하고 있는데 이중에서 틀린 것이 하나 있음
+Student s1 = new Student();
+Person s2 = new Student();
+Person p1 = new Person();
+Student s1 = new Person();
+
+다형성  polymorphism 
+	polymorphism	
+	  polymorphism
+	    polymorphism
+다형성이란? 다양한 형태 & 특성
+다양한 형태 또는 특성을 가진다는 의미,
+자바와 같은 객체 지향 언어에서의 의미는
+부모 클래스를 상속받은 자식 클래스의 인스턴스가
+부모의 객체로도 사용되고, 
+뿐만 아니라, 자식 클래스의 객체로도 사용될 수 있는 다양한 상황을 의미한다
+
+자바와 같은 객체 지향 언어에서는
+부모 클래스를 상속받은 자식 클래스의 인스턴스가
+부모의 객체로도 사용되고, 뿐만아니라 자식 클래스의
+객체로도 사용될 수 있는 다양한 상황을 의미한다
+
+자바와 같은 객체 지향 언어에서는
+부모 클래스를 상속받은 자식 클래스의 인스턴스가
+부모의 객체로도 사용되고 뿐만아니라 자식 클래스의
+객체로도 사용될 수 있는 다양한 상황을 의미한다.
+
+부모 클래스 Bird가 있고 이를 상속받은 자식 클래스 PArrot이 있다고 가정하자. 이때 새가 말을 하네 허허 사람들이 이렇게 말할 수 있다. 
+Parrot sibalnom = new Bird();
+그런데 앵무새는 새이기 때문에 새가 말을 하네 허허 이렇게도 말할 수 있다.
+
+부모 클래스명 = new 자식(); // 다형성polymorphism
+부모 클래스명 = new 자식(); // 다형성polymorphism
+부모 클래스명 = new 자식(); // 다형성polymorphism
+부모 클래스명 = new 자식(); // 다형성polymorphism
+
+결론
+정리하면, 하위 클래스의 인스턴스(객체)는 보다 위인 상위클래스의 인스턴스(객체)로도 사용될 수 있다.
+
+물론
+그 반대는 안된다 앵무새는 그 상위인 새라고 말할 수 있지만
+새는 종류가 하도 많기 때문에 모든 새가 앵무새는 아니다.
+
+따라서 상위(부모) 클래스의 인스턴스(객체)는 하위(자식)클래스의 인스턴스(객체)사용될 수 없다.
+
+class Person{}
+class Student extends Person{}
+
+public class Java100_oop_Polymorphism2 {
+	public static void main(String[] args) {
+	//[1]객체 생성
+	Student s1 = new Student(); 된다!
+	Person s1	  = new Student(); 부모가->자식을 낳음
+	//[2]객체 생성->타입은 부모 타입으로 생성
+	Person s2 = new Student();
+	
+	}
+}
+-----------------------------------------------------------------어떻게 사용할 것인가?
+
