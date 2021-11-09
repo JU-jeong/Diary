@@ -1,0 +1,218 @@
+큰 데이터베이스에 자원을 공유하면서 독립된 화면에
+가상화된 데이터베이스가 등장을 합니다
+운영체제가 있는데 거기에 가상컴퓨터를 또 설치합니다
+(도커)
+데이터베이스 안에 데이터베이스가 있다
+윈도우 안에 가상머신에 돌아가는 호스트 윈도우의 자원을 같이 쓴다 
+이를 pluggable database
+추가적으로 PLUGGABLE DATABASE로 생성
+템플릿
+XEPDB1에 접속
+오라클을 설치했던 곳으로 갑니다
+sqlplus sys as sysdba
+비밀번호는 설치할때 만들었던 것
+select name from v$pdbs;
+select name from v$pdbs;
+PDB$SEED //원본
+XEPDB1 // 가상데이터베이스
+지난번 컨테이너 데이터베이스랑은 완전 다름
+
+SID 대신 서비스 이름은 xepdb1 로 바꿈
+pdb안에 있는 가상 계정
+컨테이너 안에 있는 계정과는 완전히 별도
+
+PDB1에다 실제 데이터를 저장
+EXEC DBMS_XDB.SETLISTENERLOCALACCESS(FALSE);
+PL/SQL처리가 정상적으로 완료되었습니다.
+
+*CMD IPCONFIG // 내 IP주소 확인 가능
+
+쿼리 작성하기
+
+Admin Accounts
+SYS // ?
+SYSTEM // 일반적인 작업, 백업, 스케쥴링 등의 큰 단위는
+불가능
+
+하나의 데이터베이스에 여러 파일이 있어서 관리
+이런 파일들을 table이라 하고
+개념상의 데이터를 개체, entity라고 한다.
+테이블 안에 인덱스가 있어서 optimizer를 사용한 튜닝을
+배워두면 좋다
+
+TABLE 구조의 또다른 이름을 SCHEMA라고 한다
+이것을 사용자에게 제공
+
+DB의 권한을 얻기 위해 
+SQldevelopr -> 보기 -> dba
+dba 접속 -> PDB용 접속
+
+데이터베이스를 생성 , 저장영역, 테이블 스페이스
+오른쪽 버튼 새로만들기, 테이블생성
+보안, 새로만들기
+사용자 이름은 대문자로 한다(소문자는 ""로 감싸야됨)
+기본 테이블스페이스 선택
+사용자 권한 가질수 없는것 SYSKM sysoper sysrac 제외
+사용자 계정은 대소문자를 가림
+
+*테이블 생성 
+DDL
+CREATE ALTER DROP
+
+DML
+INSERT SELECT UPDATE DELETE = CRUD
+
+DCL
+GRANT REVOKE
+
+데이터의 정의
+class MEMBER
+{ 
+ID
+PWD
+NAME
+GENDER(6) = GENDER(2 CHAR) // 6바이트 또는 두글자
+AGE
+BIRTHDAY
+PHONE
+REGATE
+}
+ORAcle data types
+VARCHAR2(50)
+NUMBER
+DATE
+
+CREATE TABLE MEMBER
+ID VARCHAR2(50)
+
+오라클의 데이터 형식
+oracle built-in data types
+character 형식
+numeric 형식
+date 형식
+lob 형식
+
+문자는 오라클에서 ''를 표현해서 문자를 표현
+대소문자의 구분 있음
+CHAR [(size [BYTE | CHAR])]
+VARCHAR2(size [BYTE | CHAR])]
+500개가 들어왔다
+2개를 쓴다 나머지 2개는 반환 
+CHAR(3) // 3개를 쓸 수 있는 문자 형식
+VARCHAR2()//길이가 들쭉날쭉 
+(500)이라면 500에서 데이터가 2개가 들어갔다 그럼 나머지 498개를 반환합니다 이것은 테이블 안에 데이터 타입이
+각각 다른것이 있을때 사용하면 좋습니다
+
+*size = byte
+영문자는 한 자(a)가 1byte
+SELECT LENGTH('a') FROM DUAL; //1
+SELECT LENGTHB('a') FROM DUAL; //1
+SELECT LENGTHB('한글') FROM DUAL; //3
+
+NCHAR[(size)] //다른 국가 타입, 인코딩과 관련
+char의 size가 1byte 라면 nchar는 2~3byte
+NVARCHAR2 도 비슷한 맥락
+
+INSERT INTO MEMBER(GENDER) VALUES('남성');
+
+GENDER(6) = GENDER(2 CHAR) // 6바이트 또는 두글자
+후자는 바람직하지 않다
+NCHAR(2)를 써라
+
+LONG
+variable - length character strings
+containing up to 2 gigabytes -1, or 2'31 -1 bytes
+CLOB 대용량 텍스트 데이터 타임(최대 4Gbyte)
+NCLOB 대용량 텍스트 유니코드 데이터 타입(최대 4Gbyte)
+
+NUMBER NUMBER(4) 최대 4자로 이루어진 숫자 //9999
+(6, 2) 최대 6자, 소수점 2자리 포함
+(6, -2) 최대 6자, 소수점 -2자리
+AGE NUMBER
+DATE
+TIMESTAMP
+
+ALTER TABLE MEMBER MODIFY ID NVARCHAR2(20);
+
+원래 ID -> VARCHAR2(50byte)
+
+ALTER TABLE MEMBER MODIFY ID NVARCHAR2(20);
+ALTER TABLE MEMBER MODIFY ID NVARCHAR2(20);
+ALTER TABLE MEMBER MODIFY ID NVARCHAR2(20);
+ALTER TABLE MEMBER MODIFY ID NVARCHAR2(20);
+ALTER TABLE MEMBER DROP COLUMN AGE;
+ALTER TABLE MEMBER DROP COLUMN AGE;
+ALTER TABLE MEMBER DROP COLUMN AGE;
+ALTER TABLE MEMBER ADD EMAIL VARCHAR2(200);
+ALTER TABLE MEMBER ADD EMAIL VARCHAR2(200);
+ALTER TABLE MEMBER ADD EMAIL VARCHAR2(200);
+ALTER TABLE MEMBER ADD EMEIL VARCHAR2(200);
+
+쿼리 연습을 위한 테이블 준비하기
+
+준비 끝
+
+INSERT INTO <테이블> VALUES <값목록>//테이블에 값을 입력
+
+INSERT INTO MEMBER VALUES()//MEMER라는 테이블에 VALUES의 모든 값을 입력
+
+INSERT INTO MEMBER(ID, PWD) VALUES('newlec', '111');
+id와 pwd  항목에 newlec 111값 입력
+
+SELECT * FROM MEMBER;
+SELECT * FROM MEMBER;
+SELECT * FROM MEMBER;
+
+INSERT INTO MEMBER(ID, PWD) VALUES('newlec', '111');
+그럼 다른 항목은? null값
+
+SELECT * FROM MEMBER;
+INSERT INTO MEMBER(ID, PWD) VALUES('newlec', '111');
+SELECT * FROM MEMBER;
+SELECT id name, pwe FROM MEMBER;
+
+* 만약 ID라는 컬럼명을 user_id로 바꾸거 싶다면?
+SELECT id as user_id, name, pwd FROM MEMBER;
+SELECT id user_id, name, pwd FROM MEMBER; //as생략 가능
+
+
+* update / delete
+UPDATE MEMBER SET PWD='222';
+UPDATE MEMBER SET PWD  = '333', name = '손오공' WHERE ID = 'dragon';
+그럼 여러분들이 입력한 내용을 다시
+
+
+
+
+
+UPDATE MEMBER SET PWD = '111'
+멤버를 업데이트하겠다 어떻게
+패스워드가 현재 111인데
+다른걸로 바꾸다 = SET
+UPDATE MEMBER SET PWD = '222';
+//2개행이 업데이트되었습니다
+SELECT * FROM MEMBER;
+기준에 들어있던 모든 값이(pwd컬럼) 다 222로 바뀜;
+오라클은 접속정보를 따로 관리하고 있고
+접속을 따로 하면 세션이 다르게 나옴(트랜잭션 관련)
+
+UPDATE MEMBER SET PWD = '222' WHERE ID = 'newlec';
+멤버 테이블에 비밀번호를 222로 바꾼다 단 아이디가 뉴렉인 사람만!
+UPDATE MEMBER SET PWD = '222' WHERE ID = 'newlec';
+UPDATE MEMBER SET PWD = '333' WHERE ID = 'newlec';
+
+DELETE MEMBER WHERE ID = 'TEST';
+DELETE MEMBER WHERE ID = 'TEST';
+UPDATE MEMBER SET PWD = '333', name = '손오공' WHERE ID = 'dragon';
+
+*트랜잭션이란?
+그 명령어가 어떤 목적으로 사용되느냐 그것은 트랜잭션 사용을 위해 처리되는것인데 일단 트랜잭션이라는 것을 용어를 찾아보면 일단 트랜잭션이란 업무의 실행단위다 업무적인 단위란 얘기죠 논리적인 명령 단위다 논리 명령단위다 개념상의 업무적인 단위라는 것이 있다 예를 들어 계좌이체를 처리해주세요 이것은 순전히 업무적인 단위인것이다 update / update
+업무적인 단위 속에서 두 가지 물리적인 명령어 단위가 동시에 실행되어야만 한다
+이벤트 게시글 등록 -> insert와 update가 병렬적으로 처리
+이것을 하나로 묶기 위해
+1. 현재 세션을 위한 임시저장소에서 테스트
+2. 하나의 레코의 처리 후 LOCK처리해서 다른 세션이 이것을 건드리지 못하게 한다
+3. 다른 하나의 레코드 처리 후 UNLOCK이후 다른 세션과 접하게 함
+이것을 위한 명령어가 COMMIT; , ROLLBACK;
+
+
