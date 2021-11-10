@@ -1,0 +1,17 @@
+코드업 1076
+char ch = sc.nextLine().charAt(0);
+int num = (int)ch
+-> 영문자의 아스키코드 변환
+
+백준 손익분기점
+while(true){};
+-> 무한루프
+
+2100000000+9*5275961 < 10*5275961
+
+2100000000<52759610
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
