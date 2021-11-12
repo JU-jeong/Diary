@@ -1,0 +1,65 @@
+* 백준 4153번
+과거 이집트인들은 각 변들의 길이가 3, 4, 5인 삼각형이 직각 삼각형인것을 알아냈다. 주어진 세변의 길이로 삼각형이 직각인지 아닌지 구분하시오.
+
+내 풀이:
+
+int a,b,c;
+
+int genuine = math.max(a,b,c);
+
+if genuine == a
+	if a*a == b*b+c*c
+		System.out.print("right");
+	else if genuine == b
+		if b*b == b*b+c*c
+		System.out.print("right");
+		else
+		System.out.print("wrong");
+	else if genuine == c
+		if c*c == a*a+b*b
+			System.out.print("right");
+		else
+		System.out.print("wrong");
+
+
+math max로 제일 큰 값 지정
+
+근데 할 필요 없었음
+
+import java.util.Scanner;
+ 
+public class Main {
+	public static void main(String[] args) {
+    
+        Scanner in = new Scanner(System.in);
+       
+        
+        while(true) {
+        	
+        	int x = in.nextInt();
+        	int y = in.nextInt();
+        	int z = in.nextInt();
+        	
+			// 0 0 0 을 입력받으면 종료
+        	if(x == 0 && y == 0 && z == 0) break;
+            
+        	
+        	if((x * x + y * y) == z * z) {
+				System.out.println("right");
+			}
+        	else if(x * x == (y * y + z * z)) {
+				System.out.println("right");
+			}
+        	else if(y * y == (z * z + x * x)) {
+				System.out.println("right");
+			}
+        	else {
+				System.out.println("wrong");
+			}
+        	
+		}
+ 
+	}
+ 
+}
+ 
