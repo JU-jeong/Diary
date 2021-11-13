@@ -1,0 +1,87 @@
+*예외라는
+
+이 수업은 3개로 구성되어 있다
+이 다음 토픽과 그 다음 토픽
+
+예외라는 것은 프로그램 제작과정에서 발생하는 오류를 처리하는 것
+기본적으로 알고 있어야하는것들이 많이 있다
+다른것들에 비해 하고싶은것들이 좀 덜든다 부정적인다
+
+예상하지 못했던 상황 키보드가 고양이로 지나갔다거나
+
+setOprands
+
+public void divide(){
+    try{
+	System.out.print("계산결과는 ");
+	System.out.print(this.left/this.right);
+	System.out.print(" 입니다.");
+} catch(Exception e) {
+	System.out.println("오류가 발생했습니다 : " + e.getMessage());
+}
+
+public class CalculatorDemo {
+	public static void main(String[] args) {
+		Calculator c1 = new Calculator();
+		c1.setOprands(10, 0);
+		c1.divide();
+}
+
+10/0 이라 에러 발생
+Exception in thread "main" java.lang.ArithmeticException: / by zero
+at org.opentutorials.javatutorials.exception.Calculator.divide(CalcutatorDemo)
+
+exception get massage from exception
+
+e는 변수다. 이 변수 앞의 Exception은 변수의 데이터 타입이 Exception이라는 의미다. Exception은 자바에서 기본적으로 제공하는 클래스로 java.lang에 소속되어 있다. 예외가 발생하면 자바는 마치 메소드를 호출하듯이 catch를 호출하면서 그 인자로 Exception 클래스의 인스턴스를 전달하는 것이다.
+
+e.getMessage()는 자바가 전달한 인스턴스의 메소드 중 getMessage를 호출하는 코드인데, getMessage는 오류의 원인을 사람이 이해하기 쉬운 형태로 리턴하도록 약속되어 있다.
+
+*뒷수습의 방법
+1.getMassage
+2.toString
+3.printStackTrace
+
+무엇이 바뀌었는가
+catch(Exception e){
+ System.out.println("\n\ne.getMessage()\n"+e.getMessage());//오류메시지
+            System.out.println("\n\ne.toString()\n"+e.toString()); //자세한정보
+
+            System.out.println("\n\ne.printStackTrace()");//에러사항그대로출력
+            e.printStackTrace();
+	}
+}
+}
+
+*다양한 예외들과 다중캐치
+
+public class ExceptionDemo1 {
+	public static void main(String[] args) {
+	A a = new A();
+	a.z(10, 10);
+
+Class A {
+	private int[] arr = new int[3];
+	A() {
+	arr[0] = 0;
+	arr[1] = 10;
+	arr[2] = 20;
+	}
+	public void z(int first, int second){
+		System.out.println(arr[first] / arr[second]);
+	}
+}
+
+당연하게도 ArrayIndexOutOfBoundsException 10
+ArithmaticsException 등등 뜸
+try {
+	System.out.println(arr[first] / arr[second]);
+} catch(ArrayIndexOutOfBoundsException e) {
+	System.out.println("ArrayIndexOutOfBoundsException");
+} catch(ArithmeticException e) {
+	System.out.println("ArithmeticException");
+} catch(Exception e) {
+	System.out.println("Exception");
+}
+}
+}
