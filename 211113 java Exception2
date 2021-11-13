@@ -1,0 +1,64 @@
+try {
+	예외의 발생이 예상되는 로직
+}catch(예외클래스 인스턴스) {
+	예외가 발생했을 때 실행되는 로직
+}finally{ //언제나 실행됨
+	예외여부와 관계없이 실행되는 로직
+}
+
+---------------------------------------pizza time
+package org.opentutorials.javatutorials.exception;
+import java.io.*;
+public class CheckedExceptionDemo {
+    public static void main(String[] args) {
+        BufferedReader bReader = new BufferedReader(new FileReader("out.txt"));
+        String input = bReader.readLine();
+        System.out.println(input); 
+    }
+}
+자 보시면 음 제가
+그 다음에 여기를 보면 마찬가지로 제가 readLine()이라고 하는 부분에서
+breader은 try 구문 안에서 선언이 되었죠
+지역변수라는 뜻
+중괄호 바깥에서는 존재하지 않음
+다음 try문 breader을 쓰려고 하죠 이건 오류가 뜹니다
+try바깥, 즉 전역변수로서 breader을 써줘야 한다는 뜻이죠
+
+* throw 란?
+
+try{
+new FileReader("out.txt")
+}catch(___예외를 잡다_______){
+}
+
+throw{
+newFileReader("out.txt")
+}잡을수도 있고 보낼수도 있고{
+
+package org.opentutorials.javatutorials.exception;
+ 
+class B{
+    void run(){
+    }
+}
+class C{
+    void run(){
+        B b = new B();
+        b.run();
+    }
+}
+public class ThrowExceptionDemo {
+    public static void main(String[] args) {
+         C c = new C();
+         c.run();
+    }   
+}
+
+상속도 안받았는데 B의 메소드를 사용하는 C
+오류가 날 것이다
+
+B에서 예외가 생겨서 B안에서 처리할 수 있겠지만
+C로 던진다
+C는 그 예외를 Catch해서 처리할 수 있겠지만
+ThrowExceptionDemo class에게 던진다
+이것 역시 던져
