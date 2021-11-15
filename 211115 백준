@@ -1,0 +1,56 @@
+백준 11720번
+N개의 숫자가 공백 없이 쓰여있다. 이 숫자를 모두 합해서 출력하는 프로그램을 작성하시오.
+
+
+import java.util.Scanner;
+public class proto{
+    public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+    int a = sc.nextInt();
+    int[] b = new int[a];
+    int c,d  = 0;
+    for(int i = 0;  i < a; i++){
+	c = sc.nextInt();
+    c = b[i];
+    d += c;
+    }
+    System.out.print(d);
+    }
+}
+
+1. 왜 0이 나오는가
+2. 어떻게 개행하지 않고 옆으로 입력받는가
+
+3. 받은 int 값을 String으로 변환
+그것을 charAt()하여 정수계산한다
+
+import java.util.Scanner;
+ 
+public class Main {
+	public static void main(String[] args) {		
+		Scanner in = new Scanner(System.in);
+ 
+		int N = in.nextInt();
+		String a = in.next();
+		in.close();
+		
+		int sum = 0;
+        
+		for(int i = 0; i < N; i++) {
+			sum += a.charAt(i)-'0';
+		}
+		System.out.print(sum);
+	}
+}
+
+
+//----------------------------------------------------------------------
+
+백준 2231번
+
+어떤 자연수 N이 있을 때, 그 자연수 N의 분해합은 N과 N을 이루는 각 자리수의 합을 의미한다. 어떤 자연수 M의 분해합이 N인 경우, M을 N의 생성자라 한다. 예를 들어, 245의 분해합은 256(=245+2+4+5)이 된다. 따라서 245는 256의 생성자가 된다. 물론, 어떤 자연수의 경우에는 생성자가 없을 수도 있다. 반대로, 생성자가 여러 개인 자연수도 있을 수 있다.
+
+자연수 N이 주어졌을 때, N의 가장 작은 생성자를 구해내는 프로그램을 작성하시오.
+
+브루트포스 방정식을 이용한다.
+
