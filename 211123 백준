@@ -1,0 +1,68 @@
+백준 파이썬 2577번
+
+scanner
+a
+b
+c
+d = a * b * c
+sum
+list(d)
+for{ length ~ 0
+list(d)(i) = 0이면
+sum += 1
+if not
+}
+print sum
+
+a = int(input())
+b = int(input())
+c = int(input())
+result = list(str(a*b*c)) #먼저 list에 담으려면 str화 해줄것
+for i in range(10): #0부터 9까지의 수
+	print(result.count(str(i))) #count는 str만사용가능
+
+public
+
+---------------------------------------------------------------------------- 
+
+백준 파이썬 1157번
+
+word = input()
+wordlist = list(word) -> char로 변환
+char 몇번인지 파악후 list에 담는 for문 작성
+max 출력할 계획이었지만 대소문자 구분안하는거
+어떻게 처리할지 몰라서 실패
+
+* upper 함수를 이용, 소문자를 모두 대문자로 바꿔버린다.
+
+words = input().upper()
+unique_words = list(set(words)) # 입력받은 문자열에서 중복값을 제거
+
+# set함수를 사용하여 중복되지 않는 요소만을 남긴 list를 만들었다
+
+cnt_list = [] # 같은 알파벳이 몇개 있는지 표시할 list
+for x in unique_words : # 0부터 unique_word의 length 까지 
+	cnt = words.count(x) #unique_word의 요소값이 몇개있는 찾는다
+
+#count 함수를 사용. words에 같은 알파벳이 몇개있는지 배열 전부를 세준다
+	cnt_list.append(cnt) #count 숫자를 리스트에 append
+
+#cnt_list는 현재 중복된 속성값의 갯수
+#그 수의 순서는 cnt와 동일하다
+
+if cnt_list.count(max(cnt_list)) > 1 : 
+	print('?') # count 숫자 최대값이 중복되면
+#max 가장큰값이
+#count 몇개있는가
+
+else :
+       max_index = cnt_list.index(max(cnt_list))
+       print(unique_words[max_index])
+
+#index 문자열의 위치 max값을 골랐다면 그것이 배열에 몇번째 위치에
+#있는가
+#그 후 그 index 값에 해당하는 수를 매개값으로 원래 단어 배열에서 출력
+
+------------------------------------------------------------------------------
+
+
