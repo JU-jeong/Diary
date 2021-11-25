@@ -1,0 +1,10 @@
+props - 핸드폰의 버튼 - 클라이언트에게 중요하다, 컴포넌트를 조작가능
+
+state - 버튼 내부의 기계, 역할 수행, 서버에 중요하다.
+
+this.state = {
+    subject:{title:'WEB', sub: 'World Wide Web!'}
+  }
+}
+
+<Subject title = "this.state.subject.title" sub = "world wide web!">
