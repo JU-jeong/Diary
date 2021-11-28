@@ -1,0 +1,11 @@
+211128 CIDR 주소가 VPC의 CIDR 주소에 있지 않습니다
+
+서브넷을 만드는 경우
+
+172. 31. 0. 0 ~ 172. 31. 0. 0 / 16 ~ 172.
+
+BufferedReader / InputStreamReader
+
+StringBuilder / StringBuilder
+
+The CIDR block must not be the same or larger than a destination CIDR range in a route in any of the VPC route tables. For example, in a VPC where the primary CIDR block is 10.2.0.0/16, you have an existing route in a route table with a destination of 10.0.0.0/24 to a virtual private gateway. You want to associate a secondary CIDR block in the 10.0.0.0/16 range. Because of the existing route, you cannot associate a CIDR block of 10.0.0.0/24 or larger. However, you can associate a secondary CIDR block of 10.0.0.0/25 or smaller.
