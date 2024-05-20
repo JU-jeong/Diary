@@ -64,5 +64,64 @@ else :
 #그 후 그 index 값에 해당하는 수를 매개값으로 원래 단어 배열에서 출력
 
 ------------------------------------------------------------------------------
+package collection.iterable;
 
+import java.util.Iterator;
+
+public class MyArray implements Iterable<Integer> {
+	
+	private int[] numbers;
+
+	public MyArray(int[] numbers) {
+		this.numbers = numbers;
+	}
+
+	@Override
+	public Iterator<Integer> iterator(){
+		return new MyArrayIterator(numbers);
+	}
+}
+
+
+////////////////////////////////////////////////////////////////////
+
+package collection.iterable;
+
+import java.util.Iterator;
+
+public class MyArrayMain {
+
+	public static void main(String[] args){
+		MyArray myArray = new MyArray(new int[]{1, 2, 3, 4});
+		Iterator<Integer> iterator = myArray.iterator();
+		System.out.println("iterator 사용");
+
+	while (iterator.hasNext()) {
+		Integer value = 
+
+
+///////////////////////////////////////////////////////////////////////
+
+package static1;
+
+public class Data1 {
+	public String name;
+	public int count;
+
+	public Data1(String name) {
+		this.name = name;
+		count++;
+	}
+}
+
+/////////////////////////////////////////////////////////////////////////
+
+package static1;
+
+public class DataCountMain1 {
+	
+	public static void main(String[] args) {
+		Data1 data1 = new Data1("A");	
+	}
+}
 
